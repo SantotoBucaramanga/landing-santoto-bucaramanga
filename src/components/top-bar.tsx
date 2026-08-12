@@ -53,20 +53,21 @@ export default function TopBar() {
   const external = { target: '_blank', rel: 'noopener noreferrer' } as const
 
   return (
-    <div className="fixed inset-x-0 top-0 z-40 flex h-10 items-center justify-center gap-1 border-b border-[#16003C]/15 bg-[#EFC623] px-4 text-[#16003C] shadow-[0_1px_0_rgba(22,0,60,0.06)] sm:gap-2 sm:px-6">
+    <div className="fixed inset-x-0 top-0 z-40 flex h-10 items-center justify-center border-b border-[#16003C]/15 bg-[#EFC623] px-4 text-white shadow-[0_1px_0_rgba(22,0,60,0.06)] sm:px-6">
+      <div className="flex h-full items-center gap-1 bg-[#16003C] px-4 sm:gap-2 [clip-path:polygon(14px_0,calc(100%-14px)_0,100%_100%,0_100%)]">
       <a
         href="https://www.ustabuca.edu.co/htmlapoyo/Pop_Up_Se%C3%B1RU.html"
         {...external}
         aria-label="Emisora SeñRU"
-        className="flex h-8 items-center rounded-full px-1.5 transition hover:bg-[#16003C]/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16003C] focus-visible:ring-offset-2 focus-visible:ring-offset-[#EFC623]"
+        className="flex h-8 items-center rounded-full px-1.5 transition hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#16003C]"
       >
-        <img src={senruLogo} alt="" aria-hidden="true" className="h-4 w-auto sm:h-5" />
+        <img src={senruLogo} alt="" aria-hidden="true" className="h-4 w-auto brightness-0 invert sm:h-5" />
       </a>
       <a
         href="https://outlook.office365.com/"
         {...external}
         aria-label="Correo"
-        className="grid size-8 place-items-center rounded-full transition hover:bg-[#16003C]/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16003C] focus-visible:ring-offset-2 focus-visible:ring-offset-[#EFC623]"
+        className="grid size-8 place-items-center rounded-full transition hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#16003C]"
       >
         <Mail aria-hidden="true" className="size-4 sm:size-[18px]" strokeWidth={2} />
       </a>
@@ -74,7 +75,7 @@ export default function TopBar() {
         href="https://www.facebook.com/SantotomasBGA"
         {...external}
         aria-label="Facebook"
-        className="grid size-8 place-items-center rounded-full transition hover:bg-[#16003C]/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16003C] focus-visible:ring-offset-2 focus-visible:ring-offset-[#EFC623]"
+        className="grid size-8 place-items-center rounded-full transition hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#16003C]"
       >
         <FacebookLogo className="size-4 sm:size-[18px]" />
       </a>
@@ -82,7 +83,7 @@ export default function TopBar() {
         href="https://twitter.com/SANTOTOBGA"
         {...external}
         aria-label="X"
-        className="grid size-8 place-items-center rounded-full transition hover:bg-[#16003C]/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16003C] focus-visible:ring-offset-2 focus-visible:ring-offset-[#EFC623]"
+        className="grid size-8 place-items-center rounded-full transition hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#16003C]"
       >
         <XLogo className="size-4 sm:size-[18px]" />
       </a>
@@ -90,7 +91,7 @@ export default function TopBar() {
         href="https://www.instagram.com/santotobucaramanga/"
         {...external}
         aria-label="Instagram"
-        className="grid size-8 place-items-center rounded-full transition hover:bg-[#16003C]/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16003C] focus-visible:ring-offset-2 focus-visible:ring-offset-[#EFC623]"
+        className="grid size-8 place-items-center rounded-full transition hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#16003C]"
       >
         <InstagramLogo className="size-4 sm:size-[18px]" />
       </a>
@@ -98,7 +99,7 @@ export default function TopBar() {
         href="https://www.linkedin.com/in/santoto-bucaramanga/"
         {...external}
         aria-label="LinkedIn"
-        className="grid size-8 place-items-center rounded-full transition hover:bg-[#16003C]/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16003C] focus-visible:ring-offset-2 focus-visible:ring-offset-[#EFC623]"
+        className="grid size-8 place-items-center rounded-full transition hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#16003C]"
       >
         <LinkedinLogo className="size-4 sm:size-[18px]" />
       </a>
@@ -106,10 +107,11 @@ export default function TopBar() {
         href="https://www.youtube.com/channel/UCZT4JaKHf7RcJ4FNLs4LFhg"
         {...external}
         aria-label="YouTube"
-        className="grid size-8 place-items-center rounded-full transition hover:bg-[#16003C]/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16003C] focus-visible:ring-offset-2 focus-visible:ring-offset-[#EFC623]"
+        className="grid size-8 place-items-center rounded-full transition hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#16003C]"
       >
         <YoutubeLogo className="size-4 sm:size-[18px]" />
       </a>
+      </div>
     </div>
   )
 }

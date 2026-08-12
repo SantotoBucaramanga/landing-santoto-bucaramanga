@@ -29,3 +29,5 @@ Manual de Imagen SANTOCOLOMBIA.pdf
 *.njsproj
 *.sln
 *.sw?
+
+.vercel
