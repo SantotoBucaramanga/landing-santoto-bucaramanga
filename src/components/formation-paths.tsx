@@ -67,18 +67,18 @@ export function FormationPaths() {
   return (
     <section
       aria-label="Explora por formación"
-      className="w-full bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-10"
+      className="w-full bg-white px-4 pt-8 pb-12 sm:px-6 sm:pt-10 sm:pb-14 lg:px-10"
     >
       <div className="mx-auto max-w-[1440px]">
-        <div className="max-w-2xl">
-          <p aria-hidden="true" className="mb-4 h-1 w-12 rounded-full bg-[#ffdb00]" />
+        <div className="mx-auto max-w-3xl text-center">
+          <p aria-hidden="true" className="mx-auto mb-4 h-1 w-12 rounded-full bg-[#ffdb00]" />
           <h2 className="text-3xl font-bold leading-tight tracking-tight text-[#07559e] sm:text-4xl lg:text-[2.6rem]">
             Explora por formación
           </h2>
           <p className="mt-3 text-xl font-semibold leading-snug text-[#07559e]/85 sm:text-2xl">
             Una ruta para cada etapa de tu vida
           </p>
-          <p className="mt-2 max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg">
+          <p className="mt-2 text-base leading-relaxed text-slate-600 sm:text-lg">
             Desde tu primer pregrado hasta tu crecimiento profesional continuo.
           </p>
         </div>

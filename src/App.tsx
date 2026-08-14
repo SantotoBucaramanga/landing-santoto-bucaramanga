@@ -6,7 +6,6 @@ import { FormationPaths } from './components/formation-paths'
 import NavbarDemo from './components/navbar-menu-demo'
 import { MulticampusSection } from './components/multicampus-section'
 import { NewsSection } from './components/news-section'
-import { ProgramFinder } from './components/program-finder'
 import { QuickAccessSection } from './components/quick-access'
 import { StatsSection } from './components/stats-section'
 import ThumbnailCarousel from './components/thumbnail-carousel'
@@ -20,9 +19,8 @@ export default function App() {
       <NavbarDemo>
         <div className="flex w-full flex-col">
           <ThumbnailCarousel />
-          <QuickAccessSection />
-          <ProgramFinder />
           <FormationPaths />
+          <QuickAccessSection />
           <WhySantoto />
           <ExperienceBento />
           <NewsSection />

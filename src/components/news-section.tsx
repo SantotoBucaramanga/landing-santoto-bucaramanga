@@ -101,11 +101,11 @@ function NewsCard({ item, featured = false }: NewsCardProps) {
 
 export function NewsSection() {
   return (
-    <section aria-label="Noticias" className="w-full bg-slate-50 px-4 py-16 sm:px-6 sm:py-20 lg:px-10">
+    <section aria-label="Noticias" className="w-full bg-slate-50 px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
       <div className="mx-auto max-w-[1440px]">
-        <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+        <div className="flex flex-col items-center gap-6 text-center">
           <div className="max-w-2xl">
-            <p aria-hidden="true" className="mb-4 h-1 w-12 rounded-full bg-[#ffdb00]" />
+            <p aria-hidden="true" className="mx-auto mb-4 h-1 w-12 rounded-full bg-[#ffdb00]" />
             <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#07559e]">Santoto al día</p>
             <h2 className="mt-3 text-3xl font-bold leading-tight tracking-tight text-[#07559e] sm:text-4xl lg:text-[2.6rem]">
               Noticias

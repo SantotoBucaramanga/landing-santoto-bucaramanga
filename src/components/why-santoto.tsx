@@ -41,7 +41,7 @@ const reasons: ReasonItem[] = [
 
 export function WhySantoto() {
   return (
-    <section aria-label="Por qué estudiar en la Santoto" className="w-full bg-slate-50 px-4 py-16 sm:px-6 sm:py-20 lg:px-10">
+    <section aria-label="Por qué estudiar en la Santoto" className="w-full bg-slate-50 px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
       <div className="mx-auto max-w-[1440px]">
         <div className="mx-auto max-w-2xl text-center">
           <p aria-hidden="true" className="mx-auto mb-4 h-1 w-12 rounded-full bg-[#ffdb00]" />

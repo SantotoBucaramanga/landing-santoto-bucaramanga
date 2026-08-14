@@ -73,15 +73,15 @@ export function ExperienceBento() {
   const reduce = useReducedMotion()
 
   return (
-    <section aria-label="Experiencia Santo Tomás" className="w-full bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-10">
+    <section aria-label="Experiencia Santo Tomás" className="w-full bg-white px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
       <div className="mx-auto max-w-[1440px]">
-        <div className="max-w-2xl">
-          <p aria-hidden="true" className="mb-4 h-1 w-12 rounded-full bg-[#ffdb00]" />
+        <div className="mx-auto max-w-3xl text-center">
+          <p aria-hidden="true" className="mx-auto mb-4 h-1 w-12 rounded-full bg-[#ffdb00]" />
           <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#07559e]">Experiencia Santo Tomás</p>
           <h2 className="mt-3 text-3xl font-bold leading-tight tracking-tight text-[#07559e] sm:text-4xl lg:text-[2.6rem]">
             La vida universitaria en imágenes
           </h2>
-          <p className="mt-3 max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg">
+          <p className="mx-auto mt-3 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg">
             Campus, laboratorios, cultura, deporte e investigación: así se vive la Santoto en Bucaramanga.
           </p>
         </div>

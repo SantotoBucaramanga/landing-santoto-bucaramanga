@@ -15,7 +15,7 @@ const stats: StatItem[] = [
 
 export function StatsSection() {
   return (
-    <section aria-label="La Santoto en cifras" className="w-full bg-[#07559e] px-4 py-16 text-white sm:px-6 sm:py-20 lg:px-10">
+    <section aria-label="La Santoto en cifras" className="w-full bg-[#16003C] px-4 py-12 text-white sm:px-6 sm:py-14 lg:px-10">
       <div className="mx-auto max-w-[1440px]">
         <div className="max-w-2xl">
           <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#ffdb00]">Impacto institucional</p>

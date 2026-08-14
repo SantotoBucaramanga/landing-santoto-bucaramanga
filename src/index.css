@@ -1,5 +1,31 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 100 1000;
+  font-display: swap;
+  src: url('./assets/fonts/DMSans-Variable.woff2') format('woff2');
+}
+
+@theme {
+  --font-sans: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+@keyframes wave-flow {
+  to {
+    transform: translateX(-145px);
+  }
+}
+
+.animate-wave-flow {
+  animation: wave-flow 7s linear infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

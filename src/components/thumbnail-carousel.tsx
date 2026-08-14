@@ -60,7 +60,7 @@ export default function ThumbnailCarousel() {
 
   return (
     <section
-      className="w-full pt-10 pb-8 sm:pb-12"
+      className="w-full pt-10 pb-4 sm:pb-6"
       aria-label="Image carousel"
       aria-live="off"
       onMouseEnter={() => setIsHovered(true)}

@@ -34,15 +34,15 @@ const campuses: CampusCard[] = [
 
 export function CampusSection() {
   return (
-    <section aria-label="Nuestros campus" className="w-full bg-slate-50 px-4 py-16 sm:px-6 sm:py-20 lg:px-10">
+    <section aria-label="Nuestros campus" className="w-full bg-slate-50 px-4 py-12 sm:px-6 sm:py-14 lg:px-10">
       <div className="mx-auto max-w-[1440px]">
-        <div className="max-w-2xl">
-          <p aria-hidden="true" className="mb-4 h-1 w-12 rounded-full bg-[#ffdb00]" />
+        <div className="mx-auto max-w-3xl text-center">
+          <p aria-hidden="true" className="mx-auto mb-4 h-1 w-12 rounded-full bg-[#ffdb00]" />
           <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#07559e]">Nuestros campus</p>
           <h2 className="mt-3 text-3xl font-bold leading-tight tracking-tight text-[#07559e] sm:text-4xl lg:text-[2.6rem]">
             Conoce nuestros campus
           </h2>
-          <p className="mt-3 max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg">
+          <p className="mx-auto mt-3 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg">
             Tres sedes para vivir la experiencia tomasina en el área metropolitana de Bucaramanga.
           </p>
         </div>
