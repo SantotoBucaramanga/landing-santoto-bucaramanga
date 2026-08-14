@@ -1,4 +1,7 @@
 import { ArrowRight, CalendarDays } from 'lucide-react'
+import newsInterdisciplinariedad from '@/assets/media/news/news-interdisciplinariedad.jpg'
+import newsSaludVisual from '@/assets/media/news/news-salud-visual.jpg'
+import newsInvestigacion from '@/assets/media/news/news-investigacion.jpg'
 
 type NewsItem = {
   category: string
@@ -17,7 +20,7 @@ const leadNews: NewsItem = {
     'Estudiantes y docentes integran saberes para responder a los retos reales de la región con una mirada integral.',
   date: '12 de agosto, 2026',
   author: 'Dirección de Comunicaciones',
-  image: 'https://images.pexels.com/photos/5905709/pexels-photo-5905709.jpeg?auto=compress&cs=tinysrgb&w=1200',
+  image: newsInterdisciplinariedad,
   alt: 'Estudiantes y docentes en un espacio de aprendizaje colaborativo',
 }
 
@@ -29,7 +32,7 @@ const newsItems: NewsItem[] = [
       'La Santoto y aliados regionales acercan la salud visual a comunidades con menos acceso.',
     date: '9 de agosto, 2026',
     author: 'Dirección de Comunicaciones',
-    image: 'https://images.pexels.com/photos/3373735/pexels-photo-3373735.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    image: newsSaludVisual,
     alt: 'Jornada de salud visual con la comunidad',
   },
   {
@@ -39,7 +42,7 @@ const newsItems: NewsItem[] = [
       'Encuentros académicos que conectan grupos y semilleros de la Seccional.',
     date: '5 de agosto, 2026',
     author: 'Dirección de Comunicaciones',
-    image: 'https://images.pexels.com/photos/207456/pexels-photo-207456.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    image: newsInvestigacion,
     alt: 'Investigadores en diálogo académico',
   },
 ]

@@ -1,5 +1,5 @@
 import { Mail } from 'lucide-react'
-import senruLogo from '@/assets/media/logo radio usta.svg'
+import senruLogo from '@/assets/media/logos/logo radio usta.svg'
 
 function BrandIcon({ className, children }: { className?: string; children: React.ReactNode }) {
   return (

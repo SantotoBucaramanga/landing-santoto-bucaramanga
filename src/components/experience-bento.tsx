@@ -1,5 +1,12 @@
 import { motion, useReducedMotion } from 'motion/react'
 import { cn } from '@/lib/utils'
+import bento256541 from '@/assets/media/bento/bento-256541.jpg'
+import bento4226140 from '@/assets/media/bento/bento-4226140.jpg'
+import bento1190298 from '@/assets/media/bento/bento-1190298.jpg'
+import bento1552242 from '@/assets/media/bento/bento-1552242.jpg'
+import bento256247 from '@/assets/media/bento/bento-256247.jpg'
+import bento159711 from '@/assets/media/bento/bento-159711.jpg'
+import bento8199562 from '@/assets/media/bento/bento-8199562.jpg'
 
 type ExperienceItem = {
   tag: string
@@ -14,7 +21,7 @@ const experienceItems: ExperienceItem[] = [
   {
     tag: 'Campus',
     caption: 'Campus El Bosque',
-    src: 'https://images.pexels.com/photos/256541/pexels-photo-256541.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    src: bento256541,
     alt: 'Campus El Bosque de la Universidad Santo Tomás',
     className: 'md:col-span-2 md:row-span-2',
     delay: 0,
@@ -22,7 +29,7 @@ const experienceItems: ExperienceItem[] = [
   {
     tag: 'Laboratorios',
     caption: 'Prácticas en salud',
-    src: 'https://images.pexels.com/photos/4226140/pexels-photo-4226140.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    src: bento4226140,
     alt: 'Prácticas de laboratorio en salud',
     className: 'md:col-span-2',
     delay: 0.1,
@@ -30,7 +37,7 @@ const experienceItems: ExperienceItem[] = [
   {
     tag: 'Cultura',
     caption: 'Grupos artísticos',
-    src: 'https://images.pexels.com/photos/1190298/pexels-photo-1190298.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    src: bento1190298,
     alt: 'Grupos artísticos de la comunidad tomasina',
     className: 'md:col-span-2',
     delay: 0.15,
@@ -38,7 +45,7 @@ const experienceItems: ExperienceItem[] = [
   {
     tag: 'Deporte',
     caption: 'Escenarios deportivos',
-    src: 'https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    src: bento1552242,
     alt: 'Escenarios deportivos universitarios',
     className: 'md:col-span-2',
     delay: 0.2,
@@ -46,7 +53,7 @@ const experienceItems: ExperienceItem[] = [
   {
     tag: 'Investigación',
     caption: 'Semilleros',
-    src: 'https://images.pexels.com/photos/256247/pexels-photo-256247.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    src: bento256247,
     alt: 'Semilleros de investigación',
     className: 'md:col-span-2',
     delay: 0.25,
@@ -54,7 +61,7 @@ const experienceItems: ExperienceItem[] = [
   {
     tag: 'Biblioteca',
     caption: 'CRAI — Centro de Recursos para el Aprendizaje y la Investigación',
-    src: 'https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    src: bento159711,
     alt: 'Biblioteca CRAI de la Universidad Santo Tomás',
     className: 'md:col-span-3',
     delay: 0.3,
@@ -62,7 +69,7 @@ const experienceItems: ExperienceItem[] = [
   {
     tag: 'Vida universitaria',
     caption: 'Comunidad tomasina',
-    src: 'https://images.pexels.com/photos/8199562/pexels-photo-8199562.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    src: bento8199562,
     alt: 'Comunidad estudiantil de la Universidad Santo Tomás',
     className: 'md:col-span-3',
     delay: 0.35,

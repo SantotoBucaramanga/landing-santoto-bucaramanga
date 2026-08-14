@@ -7,7 +7,6 @@ import NavbarDemo from './components/navbar-menu-demo'
 import { MulticampusSection } from './components/multicampus-section'
 import { NewsSection } from './components/news-section'
 import { QuickAccessSection } from './components/quick-access'
-import { StatsSection } from './components/stats-section'
 import ThumbnailCarousel from './components/thumbnail-carousel'
 import TopBar from './components/top-bar'
 import { WhySantoto } from './components/why-santoto'
@@ -25,7 +24,6 @@ export default function App() {
           <ExperienceBento />
           <NewsSection />
           <EventsSection />
-          <StatsSection />
           <MulticampusSection />
           <CampusSection />
         </div>

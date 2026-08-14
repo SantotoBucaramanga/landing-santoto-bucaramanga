@@ -1,4 +1,12 @@
 import { useState } from 'react'
+import bogota1 from '@/assets/media/sedes/sede-bogota-1.png'
+import bogota2 from '@/assets/media/sedes/sede-bogota-2.png'
+import tunja1 from '@/assets/media/sedes/sede-tunja-1.png'
+import tunja2 from '@/assets/media/sedes/sede-tunja-2.png'
+import villavicencio1 from '@/assets/media/sedes/sede-villavicencio-1.png'
+import villavicencio2 from '@/assets/media/sedes/sede-villavicencio-2.png'
+import duad1 from '@/assets/media/sedes/sede-duad-1.png'
+import duad2 from '@/assets/media/sedes/sede-duad-2.png'
 
 type CampusSite = {
   name: string
@@ -6,28 +14,26 @@ type CampusSite = {
   image?: { base: string; hover: string }
 }
 
-const IMG = 'https://www.ustabuca.edu.co/images/Sedes_Seccionales_Santoto/ilustradas'
-
 const sites: CampusSite[] = [
   {
     name: 'Bogotá',
     href: 'https://www.usta.edu.co/',
-    image: { base: `${IMG}/Bogota_Ilustracion_1.png`, hover: `${IMG}/Bogota_Ilustracion_2.png` },
+    image: { base: bogota1, hover: bogota2 },
   },
   {
     name: 'Tunja',
     href: 'https://www.santototunja.edu.co/',
-    image: { base: `${IMG}/Tunja_Ilustracion_1.png`, hover: `${IMG}/Tunja_Ilustracion_2.png` },
+    image: { base: tunja1, hover: tunja2 },
   },
   {
     name: 'Villavicencio',
     href: 'https://www.ustavillavicencio.edu.co/',
-    image: { base: `${IMG}/Villavicencio_Ilustracion_1.png`, hover: `${IMG}/Villavicencio_Ilustracion_2.png` },
+    image: { base: villavicencio1, hover: villavicencio2 },
   },
   {
     name: 'Abierta y a distancia',
     href: 'https://usantotomas.edu.co/centros-de-atencion-universitaria',
-    image: { base: `${IMG}/Duad_Ilustracion_1.png`, hover: `${IMG}/Duad_Ilustracion_2.png` },
+    image: { base: duad1, hover: duad2 },
   },
 ]
 

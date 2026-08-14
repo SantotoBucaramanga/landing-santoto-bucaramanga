@@ -1,6 +1,15 @@
 import { useEffect, useRef, useState } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react'
+import bannerMatriculas from '@/assets/media/banners/banner-matriculas.png'
+import bannerMaestriaDerecho from '@/assets/media/banners/banner-maestria-derecho.png'
+import bannerImagenologiaOral from '@/assets/media/banners/banner-imagenologia-oral.jpg'
+import bannerDerechoConstitucional from '@/assets/media/banners/banner-derecho-constitucional.png'
+import bannerSumma from '@/assets/media/banners/banner-summa.jpg'
+import bannerCirugiaOral from '@/assets/media/banners/banner-cirugia-oral.jpg'
+import bannerVirtual from '@/assets/media/banners/banner-virtual.jpg'
+import bannerDescuentosPlanes from '@/assets/media/banners/banner-descuentos-planes.png'
+import bannerPosgrados from '@/assets/media/banners/banner-posgrados.png'
 
 type CarouselItem = {
   id: number
@@ -10,15 +19,15 @@ type CarouselItem = {
 }
 
 const carouselItems: CarouselItem[] = [
-  { id: 2, image: 'https://www.ustabuca.edu.co/images/Banner/slider_Home/2026/BANNER.png', alt: 'Banner USTA 2', href: 'https://admisiones.ustabuca.edu.co/index.php/matriculas' },
-  { id: 3, image: 'https://www.ustabuca.edu.co/images/Banner/slider_Home/2026/Banner-NUEVO-Inscripciones-abiertas-MAESTRIA-DERECHO.png', alt: 'Banner USTA 3', href: 'https://posgrados.ustabuca.edu.co/index.php/maestria-en-derecho' },
-  { id: 4, image: 'https://www.ustabuca.edu.co/images/Banner/slider_Home/2026/Banner-Esp-imagenologia-oral.jpg', alt: 'Banner USTA 4', href: 'https://pregrados.ustabuca.edu.co/index.php/odontologia' },
-  { id: 5, image: 'https://www.ustabuca.edu.co/images/Banner/slider_Home/2026/Banner-Inscripciones-abiertas-Esp-Derecho-Constitucional.png', alt: 'Banner USTA 5', href: 'https://posgrados.ustabuca.edu.co/index.php/especializacion-en-derecho-constitucional' },
-  { id: 6, image: 'https://www.ustabuca.edu.co/images/Banner/slider_Home/2025/Banner_Lanzamiento_SUMMA_1.jpg', alt: 'Banner USTA 6', href: 'https://santotosumma.edu.co/' },
-  { id: 7, image: 'https://www.ustabuca.edu.co/images/Banner/slider_Home/2026/Banner-ESP-en-Cirugia-Oral.jpg', alt: 'Banner USTA 7', href: 'https://posgrados.ustabuca.edu.co/index.php/especializacion-en-cirugia-oral' },
-  { id: 8, image: 'https://www.ustabuca.edu.co/images/Banner/slider_Home/2025/Banner_Santoto_Virtuaal_nuevo_2025.jpg', alt: 'Banner USTA 8', href: 'https://santotovirtual.edu.co/' },
-  { id: 9, image: 'https://www.ustabuca.edu.co/images/Banner/slider_Home/2026/Banner-nuevo-descuentos-y-planes-.png', alt: 'Banner USTA 9', href: 'https://admisiones.ustabuca.edu.co/index.php/aliados-financieros' },
-  { id: 10, image: 'https://www.ustabuca.edu.co/images/Banner/slider_Home/2026/Banner-nuevo-posgrados.png', alt: 'Banner USTA 10', href: 'https://www.ustabuca.edu.co/index.php/programas-academicos/presencial-y-a-distancia/posgrados-presenciales-new' },
+  { id: 2, image: bannerMatriculas, alt: 'Banner USTA 2', href: 'https://admisiones.ustabuca.edu.co/index.php/matriculas' },
+  { id: 3, image: bannerMaestriaDerecho, alt: 'Banner USTA 3', href: 'https://posgrados.ustabuca.edu.co/index.php/maestria-en-derecho' },
+  { id: 4, image: bannerImagenologiaOral, alt: 'Banner USTA 4', href: 'https://pregrados.ustabuca.edu.co/index.php/odontologia' },
+  { id: 5, image: bannerDerechoConstitucional, alt: 'Banner USTA 5', href: 'https://posgrados.ustabuca.edu.co/index.php/especializacion-en-derecho-constitucional' },
+  { id: 6, image: bannerSumma, alt: 'Banner USTA 6', href: 'https://santotosumma.edu.co/' },
+  { id: 7, image: bannerCirugiaOral, alt: 'Banner USTA 7', href: 'https://posgrados.ustabuca.edu.co/index.php/especializacion-en-cirugia-oral' },
+  { id: 8, image: bannerVirtual, alt: 'Banner USTA 8', href: 'https://santotovirtual.edu.co/' },
+  { id: 9, image: bannerDescuentosPlanes, alt: 'Banner USTA 9', href: 'https://admisiones.ustabuca.edu.co/index.php/aliados-financieros' },
+  { id: 10, image: bannerPosgrados, alt: 'Banner USTA 10', href: 'https://www.ustabuca.edu.co/index.php/programas-academicos/presencial-y-a-distancia/posgrados-presenciales-new' },
 ]
 
 export default function ThumbnailCarousel() {

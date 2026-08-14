@@ -2,6 +2,10 @@ import { useState } from 'react'
 import { ArrowUpRight } from 'lucide-react'
 import { useReducedMotion } from 'motion/react'
 import { cn } from '@/lib/utils'
+import formationPregrados from '@/assets/media/formation/formation-pregrados.jpg'
+import formationPosgrados from '@/assets/media/formation/formation-posgrados.jpg'
+import formationVirtuales from '@/assets/media/formation/formation-virtuales.jpg'
+import formationSumma from '@/assets/media/formation/formation-summa.jpg'
 
 type FormationPathItem = {
   id: string
@@ -22,7 +26,7 @@ const formationItems: FormationPathItem[] = [
     description: '10 semestres · presencial',
     cta: 'Ver pregrados',
     href: 'https://pregrados.ustabuca.edu.co/',
-    src: 'https://images.pexels.com/photos/8199562/pexels-photo-8199562.jpeg?auto=compress&cs=tinysrgb&w=1600',
+    src: formationPregrados,
     alt: 'Estudiantes de pregrado en un aula de la Universidad Santo Tomás',
   },
   {
@@ -32,7 +36,7 @@ const formationItems: FormationPathItem[] = [
     description: 'Especializaciones y maestrías',
     cta: 'Ver posgrados',
     href: 'https://posgrados.ustabuca.edu.co/',
-    src: 'https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=1600',
+    src: formationPosgrados,
     alt: 'Libros de consulta para la profundización académica',
   },
   {
@@ -42,7 +46,7 @@ const formationItems: FormationPathItem[] = [
     description: 'Modalidad virtual y a distancia',
     cta: 'Ver virtuales',
     href: 'https://santotovirtual.edu.co/',
-    src: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1600',
+    src: formationVirtuales,
     alt: 'Estudiante virtual estudiando con su computador',
   },
   {
@@ -52,7 +56,7 @@ const formationItems: FormationPathItem[] = [
     description: 'Cursos, diplomados y seminarios',
     cta: 'Ver SUMMA',
     href: 'https://santotosumma.edu.co/',
-    src: 'https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&w=1600',
+    src: formationSumma,
     alt: 'Seminario de educación continua para profesionales',
   },
 ]

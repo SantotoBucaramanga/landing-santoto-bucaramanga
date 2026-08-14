@@ -4,7 +4,11 @@ import type { ReactNode } from "react";
 import { AnimatePresence, MotionConfig, motion } from "motion/react";
 import { ChevronDown, Menu as MenuIcon, Search, X } from "lucide-react";
 import { HoveredLink, Menu, MenuItem, ProductItem } from "@/components/ui/navbar-menu";
-import ustaLogo from "@/assets/media/LOGO-USTA-Black.png";
+import ustaLogo from "@/assets/media/logos/LOGO-USTA-Black.png";
+import navbarAlgochurn from "@/assets/media/navbar-demo/navbar-algochurn.webp";
+import navbarTailwindMasterKit from "@/assets/media/navbar-demo/navbar-tailwindmasterkit.webp";
+import navbarMoonbeam from "@/assets/media/navbar-demo/navbar-moonbeam.png";
+import navbarRogue from "@/assets/media/navbar-demo/navbar-rogue.png";
 import { cn } from "@/lib/utils";
 
 const transition = {
@@ -40,25 +44,25 @@ const topLevelItems: TopLevelItem[] = [
         <ProductItem
           title="Algochurn"
           href="https://algochurn.com"
-          src="https://assets.aceternity.com/demos/algochurn.webp"
+          src={navbarAlgochurn}
           description="Prepare for tech interviews like never before."
         />
         <ProductItem
           title="Tailwind Master Kit"
           href="https://tailwindmasterkit.com"
-          src="https://assets.aceternity.com/demos/tailwindmasterkit.webp"
+          src={navbarTailwindMasterKit}
           description="Production ready Tailwind css components for your next project"
         />
         <ProductItem
           title="Moonbeam"
           href="https://gomoonbeam.com"
-          src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png"
+          src={navbarMoonbeam}
           description="Never write from scratch again. Go from idea to blog in minutes."
         />
         <ProductItem
           title="Rogue"
           href="https://userogue.com"
-          src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.47.07%E2%80%AFPM.png"
+          src={navbarRogue}
           description="Respond to government RFPs, RFIs and RFQs 10x faster using AI"
         />
       </div>
