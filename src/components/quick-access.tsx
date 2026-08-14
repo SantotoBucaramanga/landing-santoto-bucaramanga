@@ -48,8 +48,8 @@ const positionClasses: Record<CardPosition, string> = {
 }
 
 const activeCardClasses: Record<QuickAccessVariant, string> = {
-  institutional: 'border-white bg-white text-[#07559e] shadow-[0_20px_42px_rgba(0,31,79,0.28)]',
-  inclusion: 'border-purple-800 bg-purple-800 text-white shadow-[0_20px_42px_rgba(43,10,68,0.4)]',
+  institutional: 'border-[#07559e] bg-[#07559e] text-white shadow-[0_20px_42px_rgba(0,31,79,0.25)]',
+  inclusion: 'border-purple-800 bg-purple-800 text-white shadow-[0_20px_42px_rgba(43,10,68,0.25)]',
 }
 
 type QuickAccessCardProps = {
@@ -74,11 +74,11 @@ export function QuickAccessCard({
   const activeClasses = activeCardClasses[item.variant]
   const cardClasses = isActive
     ? activeClasses
-    : 'border-[#88b2d8] bg-[#82abd0] text-[#07559e] shadow-[0_12px_28px_rgba(0,31,79,0.18)]'
+    : 'border-slate-200 bg-white text-[#07559e] shadow-[0_12px_28px_rgba(0,31,79,0.1)]'
 
   const content = (
     <>
-      <span className={`grid size-14 place-items-center rounded-2xl ${isActive && item.variant === 'inclusion' ? 'bg-white text-purple-800' : isActive ? 'bg-[#0699df] text-white' : 'bg-[#0799dc]/18 text-[#078cd0]'}`}>
+      <span className={`grid size-14 place-items-center rounded-2xl ${isActive && item.variant === 'inclusion' ? 'bg-white text-purple-800' : isActive ? 'bg-[#ffdb00] text-[#16003C]' : 'bg-[#07559e]/10 text-[#07559e]'}`}>
         <Icon aria-hidden="true" className="size-7" strokeWidth={2.25} />
       </span>
       <span className="mt-5 line-clamp-3 text-center text-lg font-bold leading-[1.1] tracking-tight sm:text-xl">{item.title}</span>
@@ -144,7 +144,7 @@ export function CarouselArrow({ direction, onClick }: CarouselArrowProps) {
       type="button"
       aria-label={isPrevious ? 'Acceso anterior' : 'Acceso siguiente'}
       onClick={onClick}
-      className={`absolute top-1/2 z-30 grid size-11 -translate-y-1/2 place-items-center rounded-full bg-[#ffdb00] text-[#07559e] shadow-[0_6px_16px_rgba(0,31,79,0.28)] transition-transform hover:scale-105 focus-visible:outline-4 focus-visible:outline-white focus-visible:outline-offset-4 active:scale-95 sm:size-12 ${isPrevious ? 'left-3 sm:left-5 lg:left-[max(1.25rem,calc(50%-37rem))]' : 'right-3 sm:right-5 lg:right-[max(1.25rem,calc(50%-37rem))]'}`}
+      className={`absolute top-1/2 z-30 grid size-11 -translate-y-1/2 place-items-center rounded-full bg-[#ffdb00] text-[#07559e] shadow-[0_6px_16px_rgba(0,31,79,0.2)] transition-transform hover:scale-105 focus-visible:outline-4 focus-visible:outline-[#07559e] focus-visible:outline-offset-4 active:scale-95 sm:size-12 ${isPrevious ? 'left-3 sm:left-5 lg:left-[max(1.25rem,calc(50%-37rem))]' : 'right-3 sm:right-5 lg:right-[max(1.25rem,calc(50%-37rem))]'}`}
     >
       <Icon aria-hidden="true" className="size-7" strokeWidth={2.75} />
     </button>
@@ -168,9 +168,9 @@ export function CarouselPagination({ activeIndex, onSelect }: CarouselPagination
             aria-label={`Mostrar acceso ${index + 1} de ${quickAccessItems.length}: ${item.title}`}
             aria-current={isActive ? 'true' : undefined}
             onClick={() => onSelect(index)}
-            className={`grid size-11 place-items-center rounded-full focus-visible:outline-4 focus-visible:outline-white focus-visible:outline-offset-2 ${isActive ? '' : 'hover:bg-white/15'}`}
+            className={`grid size-11 place-items-center rounded-full focus-visible:outline-4 focus-visible:outline-[#07559e] focus-visible:outline-offset-2 ${isActive ? '' : 'hover:bg-slate-100'}`}
           >
-            <span aria-hidden="true" className={`block rounded-full transition-[width,height,background-color] ${isActive ? 'size-3 bg-[#ffdb00]' : 'size-2.5 bg-white/75'}`} />
+            <span aria-hidden="true" className={`block rounded-full transition-[width,height,background-color] ${isActive ? 'size-3 bg-[#ffdb00]' : 'size-2.5 bg-slate-300 hover:bg-slate-400'}`} />
           </button>
         )
       })}
@@ -227,7 +227,7 @@ export function QuickAccessCarousel() {
       aria-roledescription="carrusel"
       tabIndex={0}
       onKeyDown={handleKeyDown}
-      className="w-full overflow-hidden bg-[#07559e] px-6 py-12 text-white outline-none focus-visible:ring-4 focus-visible:ring-[#ffdb00] focus-visible:ring-inset sm:px-8 sm:py-14 lg:px-10 lg:py-16"
+      className="w-full overflow-hidden bg-white px-6 py-12 text-[#07559e] outline-none focus-visible:ring-4 focus-visible:ring-[#ffdb00] focus-visible:ring-inset sm:px-8 sm:py-14 lg:px-10 lg:py-16"
     >
       <div className="mx-auto grid max-w-[1440px] items-center gap-10 lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] lg:gap-12">
         <div className="max-w-xl">
@@ -235,7 +235,7 @@ export function QuickAccessCarousel() {
           <h2 className="text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-[2.6rem]">
             Accesos rápidos
           </h2>
-          <p className="mt-4 max-w-md text-base leading-relaxed text-white/85 sm:text-lg">
+          <p className="mt-4 max-w-md text-base leading-relaxed text-slate-600 sm:text-lg">
             Enlaces directos a los servicios y trámites más utilizados de la Universidad Santo Tomás, Seccional Bucaramanga.
           </p>
         </div>
