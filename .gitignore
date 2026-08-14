@@ -31,3 +31,6 @@ Manual de Imagen SANTOCOLOMBIA.pdf
 *.sw?
 
 .vercel
+
+# Browser automation artifacts
+.playwright-mcp/
