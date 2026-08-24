@@ -5,7 +5,6 @@ import { SiteFooter } from './components/footer'
 import { FormationPaths } from './components/formation-paths'
 import NavbarDemo from './components/navbar-menu-demo'
 import { MulticampusSection } from './components/multicampus-section'
-import { NewsSection } from './components/news-section'
 import { QuickAccessSection } from './components/quick-access'
 import ThumbnailCarousel from './components/thumbnail-carousel'
 import TopBar from './components/top-bar'
@@ -22,7 +21,6 @@ export default function App() {
           <QuickAccessSection />
           <WhySantoto />
           <ExperienceBento />
-          <NewsSection />
           <EventsSection />
           <MulticampusSection />
           <CampusSection />

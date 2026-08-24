@@ -60,7 +60,7 @@ export function WhySantoto() {
             return (
               <article
                 key={reason.title}
-                className="group relative flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-700 -skew-y-[2deg] grayscale hover:-translate-y-1 hover:skew-y-0 hover:grayscale-0 hover:border-[#07559e]/25 hover:shadow-[0_18px_44px_rgba(14,27,60,0.14)]"
+                className="group relative flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-700 hover:-translate-y-1 hover:-skew-y-[2deg] hover:grayscale hover:border-[#07559e]/25 hover:shadow-[0_18px_44px_rgba(14,27,60,0.14)]"
               >
                 <span className="grid size-12 place-items-center rounded-xl bg-[#ffdb00]/25 text-[#16003C] transition-colors duration-700 group-hover:bg-[#ffdb00]">
                   <Icon aria-hidden="true" className="size-6" strokeWidth={2.25} />
