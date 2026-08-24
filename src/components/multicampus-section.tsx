@@ -1,12 +1,12 @@
 import { useState } from 'react'
-import bogota1 from '@/assets/media/sedes/sede-bogota-1.png'
-import bogota2 from '@/assets/media/sedes/sede-bogota-2.png'
-import tunja1 from '@/assets/media/sedes/sede-tunja-1.png'
-import tunja2 from '@/assets/media/sedes/sede-tunja-2.png'
-import villavicencio1 from '@/assets/media/sedes/sede-villavicencio-1.png'
-import villavicencio2 from '@/assets/media/sedes/sede-villavicencio-2.png'
-import duad1 from '@/assets/media/sedes/sede-duad-1.png'
-import duad2 from '@/assets/media/sedes/sede-duad-2.png'
+import bogota1 from '@/assets/media/sedes/sede-bogota-1.webp'
+import bogota2 from '@/assets/media/sedes/sede-bogota-2.webp'
+import tunja1 from '@/assets/media/sedes/sede-tunja-1.webp'
+import tunja2 from '@/assets/media/sedes/sede-tunja-2.webp'
+import villavicencio1 from '@/assets/media/sedes/sede-villavicencio-1.webp'
+import villavicencio2 from '@/assets/media/sedes/sede-villavicencio-2.webp'
+import duad1 from '@/assets/media/sedes/sede-duad-1.webp'
+import duad2 from '@/assets/media/sedes/sede-duad-2.webp'
 
 type CampusSite = {
   name: string

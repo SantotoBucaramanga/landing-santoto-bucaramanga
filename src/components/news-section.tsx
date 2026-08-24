@@ -1,7 +1,7 @@
 import { ArrowRight, CalendarDays } from 'lucide-react'
-import newsInterdisciplinariedad from '@/assets/media/news/news-interdisciplinariedad.jpg'
-import newsSaludVisual from '@/assets/media/news/news-salud-visual.jpg'
-import newsInvestigacion from '@/assets/media/news/news-investigacion.jpg'
+import newsInterdisciplinariedad from '@/assets/media/news/news-interdisciplinariedad.webp'
+import newsSaludVisual from '@/assets/media/news/news-salud-visual.webp'
+import newsInvestigacion from '@/assets/media/news/news-investigacion.webp'
 
 type NewsItem = {
   category: string

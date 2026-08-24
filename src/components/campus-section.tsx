@@ -1,9 +1,9 @@
 import { ArrowRight, MapPin } from 'lucide-react'
 import { motion, useReducedMotion } from 'motion/react'
-import campusBucaramanga from '@/assets/media/campus/Fachada-Campus-Bucaramanga.jpg'
-import campusFloridablanca from '@/assets/media/campus/Campus de Floridablanca.jpg'
-import campusPiedecuesta from '@/assets/media/campus/Campus de Piedecuesta.jpg'
-import campusLimonal from '@/assets/media/campus/Campus El Limonal.jpg'
+import campusBucaramanga from '@/assets/media/campus/Fachada-Campus-Bucaramanga.webp'
+import campusFloridablanca from '@/assets/media/campus/Campus de Floridablanca.webp'
+import campusPiedecuesta from '@/assets/media/campus/Campus de Piedecuesta.webp'
+import campusLimonal from '@/assets/media/campus/Campus El Limonal.webp'
 
 type CampusCard = {
   name: string

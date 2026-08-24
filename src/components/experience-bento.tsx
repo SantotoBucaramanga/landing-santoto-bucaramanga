@@ -1,12 +1,12 @@
 import { motion, useReducedMotion } from 'motion/react'
 import { cn } from '@/lib/utils'
-import bento256541 from '@/assets/media/bento/bento-256541.jpg'
-import bento4226140 from '@/assets/media/bento/bento-4226140.jpg'
-import bento1190298 from '@/assets/media/bento/bento-1190298.jpg'
-import bento1552242 from '@/assets/media/bento/bento-1552242.jpg'
-import bento256247 from '@/assets/media/bento/bento-256247.jpg'
-import bento159711 from '@/assets/media/bento/bento-159711.jpg'
-import bento8199562 from '@/assets/media/bento/bento-8199562.jpg'
+import bento256541 from '@/assets/media/bento/bento-256541.webp'
+import bento4226140 from '@/assets/media/bento/bento-4226140.webp'
+import bento1190298 from '@/assets/media/bento/bento-1190298.webp'
+import bento1552242 from '@/assets/media/bento/bento-1552242.webp'
+import bento256247 from '@/assets/media/bento/bento-256247.webp'
+import bento159711 from '@/assets/media/bento/bento-159711.webp'
+import bento8199562 from '@/assets/media/bento/bento-8199562.webp'
 
 type ExperienceItem = {
   tag: string

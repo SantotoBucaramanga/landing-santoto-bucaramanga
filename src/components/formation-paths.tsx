@@ -2,10 +2,10 @@ import { useState } from 'react'
 import { ArrowUpRight } from 'lucide-react'
 import { useReducedMotion } from 'motion/react'
 import { cn } from '@/lib/utils'
-import formationPregrados from '@/assets/media/formation/formation-pregrados.jpg'
-import formationPosgrados from '@/assets/media/formation/formation-posgrados.jpg'
-import formationVirtuales from '@/assets/media/formation/formation-virtuales.jpg'
-import formationSumma from '@/assets/media/formation/formation-summa.jpg'
+import formationPregrados from '@/assets/media/formation/formation-pregrados.webp'
+import formationPosgrados from '@/assets/media/formation/formation-posgrados.webp'
+import formationVirtuales from '@/assets/media/formation/formation-virtuales.webp'
+import formationSumma from '@/assets/media/formation/formation-summa.webp'
 
 type FormationPathItem = {
   id: string

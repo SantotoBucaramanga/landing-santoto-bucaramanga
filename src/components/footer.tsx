@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
-import ustaLogo from '@/assets/media/logos/LOGO-USTA-2024-2.png'
-import logoAcredita from '@/assets/media/footer/logo-acredita.png'
-import logoIcontec from '@/assets/media/footer/logo-icontec.png'
+import ustaLogo from '@/assets/media/logos/LOGO-USTA-2024-2.webp'
+import logoAcredita from '@/assets/media/footer/logo-acredita.webp'
+import logoIcontec from '@/assets/media/footer/logo-icontec.webp'
 
 type FooterLink = { label: string; href: string }
 

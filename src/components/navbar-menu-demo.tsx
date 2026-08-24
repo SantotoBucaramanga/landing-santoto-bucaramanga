@@ -4,11 +4,11 @@ import type { ReactNode } from "react";
 import { AnimatePresence, MotionConfig, motion } from "motion/react";
 import { ChevronDown, Menu as MenuIcon, Search, X } from "lucide-react";
 import { HoveredLink, Menu, MenuItem, ProductItem } from "@/components/ui/navbar-menu";
-import ustaLogo from "@/assets/media/logos/LOGO-USTA-Black.png";
+import ustaLogo from "@/assets/media/logos/LOGO-USTA-Black.webp";
 import navbarAlgochurn from "@/assets/media/navbar-demo/navbar-algochurn.webp";
 import navbarTailwindMasterKit from "@/assets/media/navbar-demo/navbar-tailwindmasterkit.webp";
-import navbarMoonbeam from "@/assets/media/navbar-demo/navbar-moonbeam.png";
-import navbarRogue from "@/assets/media/navbar-demo/navbar-rogue.png";
+import navbarMoonbeam from "@/assets/media/navbar-demo/navbar-moonbeam.webp";
+import navbarRogue from "@/assets/media/navbar-demo/navbar-rogue.webp";
 import { cn } from "@/lib/utils";
 
 const transition = {
