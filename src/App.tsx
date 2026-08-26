@@ -8,6 +8,7 @@ import { SiteFooter } from './components/footer'
 import NavbarDemo from './components/navbar-menu-demo'
 import { MulticampusSection } from './components/multicampus-section'
 import { NewsListPage } from './components/news-list-page'
+import { NewsDetailPage } from './components/news-detail-page'
 import { InstitutionalPage } from './components/institutional-page'
 import { QuickAccessSection } from './components/quick-access'
 import ThumbnailCarousel from './components/thumbnail-carousel'
@@ -50,6 +51,7 @@ function AppRoutes() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/noticias" element={<NewsListPage />} />
+          <Route path="/noticias/:id" element={<NewsDetailPage />} />
           {Object.entries(PAGE_ID_BY_ROUTE).map(([path, pageId]) => (
             <Route key={path} path={path} element={<InstitutionalPage pageId={pageId} />} />
           ))}

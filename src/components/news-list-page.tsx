@@ -2,36 +2,14 @@ import { useMemo, useState } from 'react'
 import { ArrowRight, CalendarDays } from 'lucide-react'
 import { motion, useReducedMotion } from 'motion/react'
 import { Link } from 'react-router-dom'
-import newsData from '@/data/news.json'
+import { NewsImageFallback } from '@/components/ui/news-image-fallback'
+import type { NewsEntry } from '@/lib/news'
+import { NEWS_ITEMS, formatNewsDate } from '@/lib/news'
 import { useDocumentMeta } from '@/hooks/use-document-meta'
 import { wavePath } from '@/lib/wave-path'
 import { cn } from '@/lib/utils'
 
-export type NewsEntry = {
-  id: number
-  title: string
-  summary: string
-  date: string | null
-  alias: string
-  image: string | null
-  category: string
-  url: string
-}
-
 const PAGE_SIZE = 12
-
-function formatDate(iso: string | null): string {
-  if (!iso) return ''
-  return new Date(iso).toLocaleDateString('es-CO', { day: 'numeric', month: 'long', year: 'numeric' })
-}
-
-function ImageFallback() {
-  return (
-    <div aria-hidden="true" className="flex aspect-video w-full items-center justify-center bg-[#16003C]">
-      <span className="text-sm font-bold uppercase tracking-[0.2em] text-[#ffdb00]">Santoto al día</span>
-    </div>
-  )
-}
 
 function NewsCard({ item, delay }: { item: NewsEntry; delay: number }) {
   const reduce = useReducedMotion()
@@ -48,11 +26,9 @@ function NewsCard({ item, delay }: { item: NewsEntry; delay: number }) {
         'outline-none focus-visible:ring-4 focus-visible:ring-[#ffdb00] focus-visible:ring-offset-2 focus-visible:ring-offset-slate-50'
       )}
     >
-      <a
-        href={item.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label={`${item.title}, se abre en una pestaña nueva`}
+      <Link
+        to={`/noticias/${item.id}`}
+        aria-label={item.title}
         className="block outline-none"
       >
         {item.image ? (
@@ -66,9 +42,11 @@ function NewsCard({ item, delay }: { item: NewsEntry; delay: number }) {
             className="aspect-video w-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
         ) : (
-          <ImageFallback />
+          <div className="transition-transform duration-700 group-hover:scale-105">
+            <NewsImageFallback seed={item.id} />
+          </div>
         )}
-      </a>
+      </Link>
       <div className="flex grow flex-col gap-3 p-5">
         <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
           <span className="rounded-full bg-[#ffdb00]/90 px-3 py-1 text-[0.7rem] font-bold uppercase tracking-wider text-[#16003C]">
@@ -77,14 +55,14 @@ function NewsCard({ item, delay }: { item: NewsEntry; delay: number }) {
           {item.date && (
             <span className="inline-flex items-center gap-1.5 text-xs text-slate-500">
               <CalendarDays aria-hidden="true" className="size-3.5" />
-              <time dateTime={item.date}>{formatDate(item.date)}</time>
+              <time dateTime={item.date}>{formatNewsDate(item.date)}</time>
             </span>
           )}
         </div>
         <h2 className="font-bold leading-tight tracking-tight text-[#07559e] transition-colors group-hover:text-[#0699df]">
-          <a href={item.url} target="_blank" rel="noopener noreferrer" className="outline-none after:absolute after:inset-0">
+          <Link to={`/noticias/${item.id}`} className="outline-none after:absolute after:inset-0">
             {item.title}
-          </a>
+          </Link>
         </h2>
         <p className="text-sm leading-relaxed text-slate-600 line-clamp-3">{item.summary}</p>
       </div>
@@ -132,7 +110,7 @@ export function NewsListPage() {
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE)
   const reduce = useReducedMotion()
 
-  const news = newsData as NewsEntry[]
+  const news = NEWS_ITEMS
   const visibleNews = useMemo(() => news.slice(0, visibleCount), [news, visibleCount])
 
   useDocumentMeta({

@@ -37,8 +37,9 @@ body {
   }
 }
 
-/* Institutional article typography (CMS-exported HTML) */
-.article-content {
+/* Institutional/news article typography (CMS-exported HTML) */
+.article-content,
+.article-body {
   color: #334155;
   font-size: 1rem;
   line-height: 1.75;
@@ -47,7 +48,11 @@ body {
 .article-content h2,
 .article-content h3,
 .article-content h4,
-.article-content h5 {
+.article-content h5,
+.article-body h2,
+.article-body h3,
+.article-body h4,
+.article-body h5 {
   color: #07559e;
   font-weight: 700;
   letter-spacing: -0.01em;
@@ -56,36 +61,47 @@ body {
   line-height: 1.25;
 }
 
-.article-content h2 {
+.article-content h2,
+.article-body h2 {
   font-size: 1.5rem;
 }
 
-.article-content h3 {
+.article-content h3,
+.article-body h3 {
   font-size: 1.25rem;
 }
 
 .article-content p,
 .article-content ul,
 .article-content ol,
-.article-content table {
+.article-content table,
+.article-body p,
+.article-body ul,
+.article-body ol,
+.article-body table {
   margin-bottom: 1.15em;
 }
 
 .article-content ul,
-.article-content ol {
+.article-content ol,
+.article-body ul,
+.article-body ol {
   padding-left: 1.4em;
   list-style: disc;
 }
 
-.article-content ol {
+.article-content ol,
+.article-body ol {
   list-style: decimal;
 }
 
-.article-content li {
+.article-content li,
+.article-body li {
   margin-bottom: 0.35em;
 }
 
-.article-content a {
+.article-content a,
+.article-body a {
   color: #07559e;
   font-weight: 600;
   text-decoration: underline;
@@ -94,18 +110,21 @@ body {
   transition: color 150ms ease, text-decoration-color 150ms ease;
 }
 
-.article-content a:hover {
+.article-content a:hover,
+.article-body a:hover {
   color: #0699df;
-  text-decoration-color: #0699df;
+  text-decoration-color: #ffdb00;
 }
 
-.article-content a:focus-visible {
+.article-content a:focus-visible,
+.article-body a:focus-visible {
   outline: none;
   box-shadow: 0 0 0 3px rgba(255, 219, 0, 0.9);
   border-radius: 4px;
 }
 
-.article-content img {
+.article-content img,
+.article-body img {
   display: block;
   max-width: 100%;
   height: auto;
@@ -114,18 +133,54 @@ body {
   border: 1px solid rgb(226 232 240);
 }
 
-.article-content strong {
+.article-content strong,
+.article-body strong {
   color: #16003c;
 }
 
-.article-content blockquote {
+.article-content blockquote,
+.article-body blockquote {
   border-left: 4px solid #ffdb00;
   padding-left: 1em;
   font-style: italic;
   color: #475569;
 }
 
-.article-content hr {
+.article-content hr,
+.article-body hr {
   border-color: rgb(226 232 240);
   margin: 2em 0;
+}
+
+/* News detail specifics: justified reading column, legacy tables and embeds */
+.article-body p {
+  text-align: justify;
+}
+
+.article-body table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.925rem;
+}
+
+.article-body th,
+.article-body td {
+  border: 1px solid rgb(226 232 240);
+  padding: 0.55em 0.8em;
+  text-align: left;
+  vertical-align: top;
+}
+
+.article-body th {
+  background-color: rgb(248 250 252);
+  color: #16003c;
+  font-weight: 700;
+}
+
+.article-body iframe {
+  display: block;
+  max-width: 100%;
+  margin: 1.5em auto;
+  border-radius: 1rem;
+  border: 1px solid rgb(226 232 240);
 }

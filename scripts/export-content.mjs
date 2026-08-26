@@ -144,9 +144,9 @@ async function loadFromDatabase() {
 
   // NOTE: the reserved-word column `fulltext` must always be qualified/aliased.
   const [newsRows] = await connection.query(
-    'SELECT `id`, `title`, `alias`, `introtext`, `created` FROM `xk7z5_k2_items` ' +
+    'SELECT `id`, `title`, `alias`, `introtext`, `xk7z5_k2_items`.`fulltext` AS body, `created` FROM `xk7z5_k2_items` ' +
       'WHERE `catid` = ? AND `published` = 1 AND `trash` = 0 ' +
-      `ORDER BY \`created\` DESC, \`id\` DESC LIMIT ${NEWS_LIMIT}`,
+      'ORDER BY `created` DESC, `id` DESC',
     [NEWS_K2_CATEGORY_ID]
   )
 
@@ -191,12 +191,11 @@ function loadFromDump() {
     cursor = pos + 1
   }
 
-  // xk7z5_k2_items: id(0) title(1) alias(2) catid(3) published(4) introtext(5) … created(11)
+  // xk7z5_k2_items: id(0) title(1) alias(2) catid(3) published(4) introtext(5) … created(11) fulltext(7)
   const newsRows = (tables.xk7z5_k2_items ?? [])
     .filter((row) => row[3] === NEWS_K2_CATEGORY_ID && row[4] === 1)
-    .map((row) => ({ id: row[0], title: row[1], alias: row[2], introtext: row[5], created: row[11] }))
-    .sort((a, b) => b.created.localeCompare(a.created) || b.id - a.id)
-    .slice(0, NEWS_LIMIT)
+    .map((row) => ({ id: row[0], title: row[1], alias: row[2], introtext: row[5], body: row[7], created: row[11] }))
+    .sort((a, b) => String(b.created).localeCompare(String(a.created)) || b.id - a.id)
 
   // xk7z5_content: id(0) asset_id(1) title(2) alias(3) introtext(4) fulltext(5) state(6)
   const pageRows = PAGE_IDS.map((id) => (tables.xk7z5_content ?? []).find((row) => row[0] === id))
@@ -281,16 +280,20 @@ function parseString(sql, start) {
  */
 function projectNews(rows, verifiedImages) {
   return rows
-    .map((row) => ({
-      id: Number(row.id),
-      title: decodeEntities(String(row.title)),
-      summary: truncateSummary(toPlainText(String(row.introtext))),
-      date: toIsoDate(String(row.created)),
-      alias: String(row.alias),
-      image: verifiedImages.get(k2ImageHash(Number(row.id))) ? `${SITE_BASE}media/k2/items/cache/${k2ImageHash(Number(row.id))}_L.jpg` : null,
-      category: NEWS_CATEGORY_LABEL,
-      url: `${SITE_BASE}index.php?option=com_k2&view=item&layout=item&id=${Number(row.id)}`,
-    }))
+    .map((row) => {
+      const source = `${String(row.introtext)}${row.body ? String(row.body) : ''}`
+      return {
+        id: Number(row.id),
+        title: decodeEntities(String(row.title)),
+        summary: truncateSummary(toPlainText(String(row.introtext))),
+        html: cleanArticleHtml(source),
+        date: toIsoDate(String(row.created)),
+        alias: String(row.alias),
+        image: verifiedImages.get(k2ImageHash(Number(row.id))) ? `${SITE_BASE}media/k2/items/cache/${k2ImageHash(Number(row.id))}_L.jpg` : null,
+        category: NEWS_CATEGORY_LABEL,
+        url: `${SITE_BASE}index.php?option=com_k2&view=item&layout=item&id=${Number(row.id)}`,
+      }
+    })
     .sort((a, b) => String(b.date).localeCompare(String(a.date)) || b.id - a.id)
 }
 
