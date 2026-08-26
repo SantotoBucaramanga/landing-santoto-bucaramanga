@@ -7,6 +7,7 @@ export type NewsEntry = {
   html: string
   date: string | null
   alias: string
+  slug: string
   image: string | null
   category: string
   url: string
@@ -18,6 +19,10 @@ export const NEWS_ITEMS = NEWS_DATA
 
 export function findNewsById(id: number): NewsEntry | undefined {
   return NEWS_DATA.find((entry) => entry.id === id)
+}
+
+export function findNewsBySlug(slug: string): NewsEntry | undefined {
+  return NEWS_DATA.find((entry) => entry.slug === slug || entry.id === Number(slug))
 }
 
 /**

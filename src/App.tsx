@@ -51,7 +51,7 @@ function AppRoutes() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/noticias" element={<NewsListPage />} />
-          <Route path="/noticias/:id" element={<NewsDetailPage />} />
+          <Route path="/noticias/:slug" element={<NewsDetailPage />} />
           {Object.entries(PAGE_ID_BY_ROUTE).map(([path, pageId]) => (
             <Route key={path} path={path} element={<InstitutionalPage pageId={pageId} />} />
           ))}

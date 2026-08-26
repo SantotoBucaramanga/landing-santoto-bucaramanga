@@ -4,7 +4,7 @@ import { ArrowLeft, CalendarDays } from 'lucide-react'
 import { motion, useReducedMotion } from 'motion/react'
 import { NewsImageFallback } from '@/components/ui/news-image-fallback'
 import { useDocumentMeta } from '@/hooks/use-document-meta'
-import { findNewsById, formatNewsDate, stripLegacyArtifacts } from '@/lib/news'
+import { findNewsBySlug, formatNewsDate, stripLegacyArtifacts } from '@/lib/news'
 
 function ArticleBlock({ children, delay }: { children: React.ReactNode; delay: number }) {
   const reduce = useReducedMotion()
@@ -21,10 +21,9 @@ function ArticleBlock({ children, delay }: { children: React.ReactNode; delay: n
 }
 
 export function NewsDetailPage() {
-  const params = useParams<{ id: string }>()
-  const id = Number(params.id)
+  const params = useParams<{ slug: string }>()
 
-  const item = useMemo(() => (Number.isFinite(id) ? findNewsById(id) : undefined), [id])
+  const item = useMemo(() => (params.slug ? findNewsBySlug(params.slug) : undefined), [params.slug])
   const cleanHtml = useMemo(() => stripLegacyArtifacts(item?.html ?? ''), [item])
 
   useDocumentMeta({ title: item?.title ?? 'Noticia no encontrada', description: item?.summary })
@@ -119,7 +118,7 @@ export function NewsDetailPage() {
                 rel="noopener noreferrer"
                 className="font-semibold text-[#07559e] underline decoration-2 underline-offset-4 outline-none transition-colors hover:text-[#0699df] focus-visible:ring-2 focus-visible:ring-[#ffdb00] focus-visible:ring-offset-2"
               >
-                ustabuca.edu.co — {item.alias}, se abre en una pestaña nueva
+                ustabuca.edu.co — {item.title}, se abre en una pestaña nueva
               </a>
             </p>
             <Link

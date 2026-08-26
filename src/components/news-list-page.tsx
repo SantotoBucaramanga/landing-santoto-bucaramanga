@@ -27,7 +27,7 @@ function NewsCard({ item, delay }: { item: NewsEntry; delay: number }) {
       )}
     >
       <Link
-        to={`/noticias/${item.id}`}
+        to={`/noticias/${item.slug}`}
         aria-label={item.title}
         className="block outline-none"
       >
@@ -60,7 +60,7 @@ function NewsCard({ item, delay }: { item: NewsEntry; delay: number }) {
           )}
         </div>
         <h2 className="font-bold leading-tight tracking-tight text-[#07559e] transition-colors group-hover:text-[#0699df]">
-          <Link to={`/noticias/${item.id}`} className="outline-none after:absolute after:inset-0">
+          <Link to={`/noticias/${item.slug}`} className="outline-none after:absolute after:inset-0">
             {item.title}
           </Link>
         </h2>

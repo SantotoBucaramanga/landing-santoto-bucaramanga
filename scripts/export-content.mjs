@@ -26,7 +26,6 @@ const execFileAsync = promisify(execFile)
 
 const SITE_BASE = 'https://www.ustabuca.edu.co/'
 const NEWS_CATEGORY_LABEL = 'Noticias'
-const NEWS_LIMIT = 60
 const NEWS_K2_CATEGORY_ID = 211
 
 const PAGE_IDS = [218, 223, 222, 276, 291, 341, 340, 324, 306, 286, 316]
@@ -191,10 +190,10 @@ function loadFromDump() {
     cursor = pos + 1
   }
 
-  // xk7z5_k2_items: id(0) title(1) alias(2) catid(3) published(4) introtext(5) … created(11) fulltext(7)
+  // xk7z5_k2_items: id(0) title(1) alias(2) catid(3) published(4) introtext(5) fulltext(6) video(7) … created(11)
   const newsRows = (tables.xk7z5_k2_items ?? [])
     .filter((row) => row[3] === NEWS_K2_CATEGORY_ID && row[4] === 1)
-    .map((row) => ({ id: row[0], title: row[1], alias: row[2], introtext: row[5], body: row[7], created: row[11] }))
+    .map((row) => ({ id: row[0], title: row[1], alias: row[2], introtext: row[5], body: row[6], created: row[11] }))
     .sort((a, b) => String(b.created).localeCompare(String(a.created)) || b.id - a.id)
 
   // xk7z5_content: id(0) asset_id(1) title(2) alias(3) introtext(4) fulltext(5) state(6)
@@ -291,6 +290,7 @@ function projectNews(rows, verifiedImages) {
         alias: String(row.alias),
         image: verifiedImages.get(k2ImageHash(Number(row.id))) ? `${SITE_BASE}media/k2/items/cache/${k2ImageHash(Number(row.id))}_L.jpg` : null,
         category: NEWS_CATEGORY_LABEL,
+        slug: String(row.alias),
         url: `${SITE_BASE}index.php?option=com_k2&view=item&layout=item&id=${Number(row.id)}`,
       }
     })
