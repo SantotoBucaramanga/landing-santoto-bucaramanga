@@ -1,8 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "motion/react";
-
-
+import { Link } from "react-router-dom";
 
 const transition = {
   type: "spring" as const,
@@ -12,6 +11,8 @@ const transition = {
   restDelta: 0.001,
   restSpeed: 0.001,
 };
+
+const isInternalHref = (href?: string) => Boolean(href && !/^https?:\/\//i.test(href));
 
 export const MenuItem = ({
   setActive,
@@ -100,14 +101,15 @@ export const ProductItem = ({
   description,
   href,
   src,
+  ...rest
 }: {
   title: string;
   description: string;
   href: string;
   src: string;
-}) => {
-  return (
-    <a href={href} className="flex space-x-2">
+} & React.ComponentPropsWithoutRef<"a">) => {
+  const product = (
+    <>
       <img
         src={src}
         width={140}
@@ -123,16 +125,33 @@ export const ProductItem = ({
           {description}
         </p>
       </div>
+    </>
+  );
+  const className = "flex space-x-2";
+  return isInternalHref(href) ? (
+    <Link to={href} className={className}>
+      {product}
+    </Link>
+  ) : (
+    <a href={href} {...rest} className={className}>
+      {product}
     </a>
   );
 };
 
 export const HoveredLink = ({ children, ...rest }: any) => {
+  const { href, ...anchorRest } = rest;
+  const linkClass =
+    "rounded-sm text-neutral-700 transition-colors hover:text-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-700/70 focus-visible:ring-offset-2 focus-visible:ring-offset-white/50 dark:text-neutral-200 dark:focus-visible:ring-white dark:focus-visible:ring-offset-black/50";
+  if (isInternalHref(href)) {
+    return (
+      <Link to={href ?? "/"} className={linkClass}>
+        {children}
+      </Link>
+    );
+  }
   return (
-    <a
-      {...rest}
-      className="rounded-sm text-neutral-700 transition-colors hover:text-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-700/70 focus-visible:ring-offset-2 focus-visible:ring-offset-white/50 dark:text-neutral-200 dark:focus-visible:ring-white dark:focus-visible:ring-offset-black/50"
-    >
+    <a {...anchorRest} href={href} className={linkClass}>
       {children}
     </a>
   );

@@ -36,3 +36,96 @@ body {
     scroll-behavior: auto !important;
   }
 }
+
+/* Institutional article typography (CMS-exported HTML) */
+.article-content {
+  color: #334155;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.article-content h2,
+.article-content h3,
+.article-content h4,
+.article-content h5 {
+  color: #07559e;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-top: 2em;
+  margin-bottom: 0.6em;
+  line-height: 1.25;
+}
+
+.article-content h2 {
+  font-size: 1.5rem;
+}
+
+.article-content h3 {
+  font-size: 1.25rem;
+}
+
+.article-content p,
+.article-content ul,
+.article-content ol,
+.article-content table {
+  margin-bottom: 1.15em;
+}
+
+.article-content ul,
+.article-content ol {
+  padding-left: 1.4em;
+  list-style: disc;
+}
+
+.article-content ol {
+  list-style: decimal;
+}
+
+.article-content li {
+  margin-bottom: 0.35em;
+}
+
+.article-content a {
+  color: #07559e;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(7, 85, 158, 0.4);
+  text-underline-offset: 3px;
+  transition: color 150ms ease, text-decoration-color 150ms ease;
+}
+
+.article-content a:hover {
+  color: #0699df;
+  text-decoration-color: #0699df;
+}
+
+.article-content a:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 219, 0, 0.9);
+  border-radius: 4px;
+}
+
+.article-content img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  margin: 1.5em auto;
+  border: 1px solid rgb(226 232 240);
+}
+
+.article-content strong {
+  color: #16003c;
+}
+
+.article-content blockquote {
+  border-left: 4px solid #ffdb00;
+  padding-left: 1em;
+  font-style: italic;
+  color: #475569;
+}
+
+.article-content hr {
+  border-color: rgb(226 232 240);
+  margin: 2em 0;
+}

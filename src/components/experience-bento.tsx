@@ -1,5 +1,6 @@
 import { ArrowRight, CalendarDays } from 'lucide-react'
 import { motion, useReducedMotion } from 'motion/react'
+import { Link } from 'react-router-dom'
 import { cn } from '@/lib/utils'
 import newsInterdisciplinariedad from '@/assets/media/news/news-interdisciplinariedad.webp'
 import newsSaludVisual from '@/assets/media/news/news-salud-visual.webp'
@@ -68,13 +69,13 @@ export function ExperienceBento() {
           <h2 className="mt-3 text-3xl font-bold leading-tight tracking-tight text-[#07559e] sm:text-4xl lg:text-[2.6rem]">
             Noticias
           </h2>
-          <a
-            href="#"
-            className="mt-4 inline-flex w-fit items-center gap-1.5 text-sm font-bold text-[#07559e] outline-none transition hover:text-[#0699df] focus-visible:ring-2 focus-visible:ring-[#07559e] focus-visible:ring-offset-2"
+          <Link
+            to="/noticias"
+            className="mt-4 inline-flex min-h-11 items-center gap-1.5 text-sm font-bold text-[#07559e] outline-none transition hover:text-[#0699df] focus-visible:ring-2 focus-visible:ring-[#ffdb00] focus-visible:ring-offset-2"
           >
             Ver todas las noticias
             <ArrowRight aria-hidden="true" className="size-4" />
-          </a>
+          </Link>
         </div>
 
         <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-6 md:auto-rows-[220px]">

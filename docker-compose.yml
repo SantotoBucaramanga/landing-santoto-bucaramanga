@@ -1,0 +1,23 @@
+services:
+  db:
+    image: mariadb:11.8
+    container_name: usta-content-db
+    restart: unless-stopped
+    environment:
+      MARIADB_DATABASE: web2018
+      MARIADB_USER: adminweb
+      MARIADB_PASSWORD: "wZX#k4x:Buca2018"
+      MARIADB_ROOT_PASSWORD: "wZX#k4x:Buca2018-root-local-only"
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./docker/db/usta-content-dump.sql.gz:/docker-entrypoint-initdb.d/usta-content-dump.sql.gz:ro
+      - usta-mariadb-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+
+volumes:
+  usta-mariadb-data:
